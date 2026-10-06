@@ -12,7 +12,8 @@ IFB-211-Pemrograman-Web/
 ├── Assets/                   <- Diagram & aset visual pendukung
 └── Tugas/                    <- Penugasan & praktikum perkuliahan
     ├── 21.9.2026/            <- Tugas 1: Perancangan Struktur Navigasi SIMSKK
-    └── 28.9.2026/            <- Tugas 2: Analisis SDLC & Portofolio Web Interaktif
+    ├── 28.9.2026/            <- Tugas 2: Analisis SDLC & Portofolio Web Interaktif
+    └── 05.10.2026/           <- Tugas 3: Desain Portofolio Web Responsif & Styling CSS
 ```
 
 ---
@@ -37,4 +38,10 @@ Versi buku digital komprehensif (dilengkapi sampul, daftar isi tertaut, tipograf
    - Implementasi rancangan portofolio personal responsif.
    - Laporan kajian teknis format PDF.
 
+3. **Tugas 3 (05.10.2026) — Desain Portofolio Web Responsif & Styling CSS:**
+   - Pengembangan antarmuka web CV & Portofolio personal dengan elemen semantik HTML5.
+   - Penerapan sistem desain *Dark Theme* modern berbasis CSS kustom murni (Flexbox, CSS Grid, tipografi Google Fonts, dan *media queries* responsif).
+   - Dokumentasi laporan bukti pengerjaan resmi format PDF (`152025013_Adika_Faza_Athallah_tugas_3.pdf`).
+
 ---
+
