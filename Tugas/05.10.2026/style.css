@@ -1,26 +1,22 @@
-/* ==========================================================================
-   1. RESET & GAYA DASAR HALAMAN (BODY & THEME)
-   ========================================================================== */
+/* Gaya dasar dan tema gelap */
 body {
     margin: 0px;
-    background-color: #1d1d1c; /* Latar belakang abu-abu gelap utama */
-    color: white;              /* Teks putih standar */
+    background-color: #1d1d1c;
+    color: white;
 }
 
-/* ==========================================================================
-   2. HEADER & NAVBAR NAVIGASI
-   ========================================================================== */
+/* Header dan navigasi */
 header {
     padding: 30px;
     height: 30px;
-    background-color: #131312; /* Warna navbar kontras lebih gelap */
+    background-color: #131312;
     margin: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Tipografi Judul Nama Header */
+/* Judul header */
 header h1 {
     font-family: cormorant, serif;
     font-optical-sizing: auto;
@@ -28,7 +24,7 @@ header h1 {
     font-style: italic;
 }
 
-/* Navigasi Link Menu */
+/* Link navigasi */
 nav a {
     font-family: montserrat, sans-serif;
     text-decoration: none;
@@ -37,9 +33,7 @@ nav a {
     color: aliceblue;
 }
 
-/* ==========================================================================
-   3. HERO / GREETINGS SECTION (TIPOGRAFI SAMBUTAN)
-   ========================================================================== */
+/* Section greetings */
 .greetings h2 {
     text-align: center;
     padding-top: 10px;
@@ -51,7 +45,7 @@ nav a {
     margin-bottom: 5px;
 }
 
-/* Aksen font Pixelify Sans untuk kata Web3 */
+/* Aksen teks Web3 */
 .web3-text {
     font-family: "Pixelify Sans";
     font-weight: 400;
@@ -69,15 +63,13 @@ nav a {
     font-style: italic;
 }
 
-/* Penegasan teks Call-to-Action "Lets Connect" */
+/* Teks ajakan connect */
 .connect {
     font-style: normal;
     font-weight: 600;
 }
 
-/* ==========================================================================
-   4. SHOWCASE YOUTUBE THUMBNAILS
-   ========================================================================== */
+/* Thumbnail video YouTube */
 .youtube-thumbnail {
     display: flex;
     justify-content: center;
@@ -95,7 +87,7 @@ nav a {
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Efek hover interaktif kartu video */
+/* Hover thumbnail */
 .youtube-thumbnail a:hover {
     border-color: #aaa99f;
     transform: translateY(-3px);
@@ -109,9 +101,7 @@ nav a {
     object-fit: cover;
 }
 
-/* ==========================================================================
-   5. KONTAINER UTAMA KONTEN (MAIN BACKGROUND CARD)
-   ========================================================================== */
+/* Kontainer utama konten */
 .main-background {
     background-color: #131312;
     padding: 30px;
@@ -119,16 +109,14 @@ nav a {
     margin: 40px;
 }
 
-/* Garis pembatas horizontal dalam konten utama */
+/* Garis pembatas */
 main hr {
     border: 0;
     border-top: 1px solid #393937;
     margin: 40px 0;
 }
 
-/* ==========================================================================
-   6. JUDUL SETIAP SECTION KONTEN
-   ========================================================================== */
+/* Judul setiap section */
 #experiences h2,
 #organisasi h2,
 #sertifikasi h2,
@@ -139,15 +127,14 @@ main hr {
     font-weight: 500;
 }
 
-/* ==========================================================================
-   7. SECTION EXPERIENCES (CSS GRID 3 KOLOM)
-   ========================================================================== */
+/* Grid pengalaman kerja */
 .experience-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
+/* Kartu pengalaman */
 .experience-card {
     padding: 24px;
     border: 1px solid #393937;
@@ -170,9 +157,7 @@ main hr {
     line-height: 1.7;
 }
 
-/* ==========================================================================
-   8. SECTION ORGANISASI & SERTIFIKASI (LIST STYLING)
-   ========================================================================== */
+/* List organisasi dan sertifikasi */
 #experiences li,
 #organisasi li,
 #sertifikasi li {
@@ -181,15 +166,14 @@ main hr {
     line-height: 1.7;
 }
 
-/* ==========================================================================
-   9. SECTION HUBUNGI SAYA / CONNECT (CONTACT BUTTON CARDS)
-   ========================================================================== */
+/* Deskripsi kontak */
 .contact-intro {
     margin: -8px 0 24px;
     font-family: Montserrat, sans-serif;
     color: #c5c5c1;
 }
 
+/* Tombol link kontak */
 .contact-links {
     display: flex;
     flex-wrap: wrap;
@@ -210,6 +194,7 @@ main hr {
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Hover tombol kontak */
 .contact-links a:hover {
     border-color: #aaa99f;
     transform: translateY(-3px);
@@ -222,9 +207,7 @@ main hr {
     text-transform: uppercase;
 }
 
-/* ==========================================================================
-   10. SECTION ABOUT ME (TABEL BIOGRAFI & AVATAR PROFIL)
-   ========================================================================== */
+/* Kolom tabel profil */
 .table1 {
     padding: 20px;
 }
@@ -235,14 +218,14 @@ main hr {
     font-weight: 200;
 }
 
-/* Drop-cap artistik huruf pertama paragraf */
+/* Huruf awal paragraf About Me */
 .Saya {
     font-family: "Pixelify Sans";
     font-size: 50px;
     padding-right: 5px;
 }
 
-/* Foto profil berbingkai melengkung */
+/* Foto profil */
 .profile-picture {
     width: 320px;
     height: 320px;
@@ -252,17 +235,14 @@ main hr {
     margin: 0 auto;
 }
 
-/* ==========================================================================
-   11. MEDIA QUERIES (DESAIN RESPONSIF LAYAR FLEKSIBEL)
-   ========================================================================== */
-/* Responsif Tablet: Grid 3 kolom beralih menjadi 1 kolom bertumpuk */
+/* Media query tablet */
 @media (max-width: 900px) {
     .experience-list {
         grid-template-columns: 1fr;
     }
 }
 
-/* Responsif Mobile: Penyesuaian margin kontainer & thumbnail Youtube */
+/* Media query mobile */
 @media (max-width: 700px) {
     .main-background {
         margin: 24px 12px;
