@@ -1,0 +1,238 @@
+body {
+    margin: 0px;
+    background-color: #1d1d1c;
+    color: white;
+}
+
+header {
+    padding: 30px;
+    height: 30px;
+    background-color: #131312;
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    
+    font-family:cormorant, serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: italic;
+}
+
+nav a {
+    font-family: montserrat;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 600;
+    color: aliceblue;
+}
+
+.greetings h2 {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-family:montserrat;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.web3-text {
+    font-family: "Pixelify Sans";
+    font-weight: 400;
+    font-style: italic;
+    font-size: 50px;
+}
+
+.infra {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.connect {
+    font-style: normal;
+    font-weight: 600;
+}
+
+.youtube-thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.youtube-thumbnail a {
+    display: block;
+    width: min(620px, calc(50% - 8px));
+    overflow: hidden;
+    border: 1px solid #393937;
+    border-radius: 20px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.youtube-thumbnail a:hover {
+    border-color: #aaa99f;
+    transform: translateY(-3px);
+}
+
+.youtube-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 620 / 320;
+    object-fit: cover;
+}
+
+
+.main-background {
+    background-color:#131312;
+    padding: 30px;
+    border-radius: 40px;
+    margin: 40px;
+}
+
+main hr {
+    border: 0;
+    border-top: 1px solid #393937;
+    margin: 40px 0;
+}
+
+#experiences h2,
+#organisasi h2,
+#sertifikasi h2,
+#hubungi-saya h2 {
+    margin: 0 0 24px;
+    font-family: Montserrat, sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.experience-card {
+    padding: 24px;
+    border: 1px solid #393937;
+    border-radius: 20px;
+    background-color: #1d1d1c;
+}
+
+.experience-card h3 {
+    margin: 0 0 12px;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.experience-card p {
+    margin: 0;
+    color: #c5c5c1;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+#experiences li,
+#organisasi li,
+#sertifikasi li {
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.contact-intro {
+    margin: -8px 0 24px;
+    font-family: Montserrat, sans-serif;
+    color: #c5c5c1;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.contact-links a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 240px;
+    padding: 18px 20px;
+    border: 1px solid #393937;
+    border-radius: 16px;
+    color: white;
+    font-family: Montserrat, sans-serif;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-links a:hover {
+    border-color: #aaa99f;
+    transform: translateY(-3px);
+}
+
+.contact-links span {
+    color: #aaa99f;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.table1 {
+    padding: 20px;
+}
+
+.table2 {
+    font-family: montserrat;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.Saya {
+    font-family:"Pixelify Sans" ;
+    font-size: 50px;
+    padding-right: 5px;
+}
+.profile-picture {
+    width:320px;
+    height:320px;
+    border-radius: 20px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .experience-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-background {
+        margin: 24px 12px;
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .youtube-thumbnail {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .youtube-thumbnail a {
+        width: 100%;
+    }
+}
