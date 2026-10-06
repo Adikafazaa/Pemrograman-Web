@@ -1,46 +1,57 @@
+/* ==========================================================================
+   1. RESET & GAYA DASAR HALAMAN (BODY & THEME)
+   ========================================================================== */
 body {
     margin: 0px;
-    background-color: #1d1d1c;
-    color: white;
+    background-color: #1d1d1c; /* Latar belakang abu-abu gelap utama */
+    color: white;              /* Teks putih standar */
 }
 
+/* ==========================================================================
+   2. HEADER & NAVBAR NAVIGASI
+   ========================================================================== */
 header {
     padding: 30px;
     height: 30px;
-    background-color: #131312;
+    background-color: #131312; /* Warna navbar kontras lebih gelap */
     margin: 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* Tipografi Judul Nama Header */
 header h1 {
-    
-    font-family:cormorant, serif;
+    font-family: cormorant, serif;
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: italic;
 }
 
+/* Navigasi Link Menu */
 nav a {
-    font-family: montserrat;
+    font-family: montserrat, sans-serif;
     text-decoration: none;
     margin-left: 10px;
     font-weight: 600;
     color: aliceblue;
 }
 
+/* ==========================================================================
+   3. HERO / GREETINGS SECTION (TIPOGRAFI SAMBUTAN)
+   ========================================================================== */
 .greetings h2 {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 30px;
     font-size: 40px;
-    font-family:montserrat;
+    font-family: montserrat, sans-serif;
     font-style: normal;
     font-weight: 400;
     margin-bottom: 5px;
 }
 
+/* Aksen font Pixelify Sans untuk kata Web3 */
 .web3-text {
     font-family: "Pixelify Sans";
     font-weight: 400;
@@ -48,6 +59,7 @@ nav a {
     font-size: 50px;
 }
 
+/* Teks spesialisasi infrastruktur */
 .infra {
     display: block;
     margin-top: 0px;
@@ -57,11 +69,15 @@ nav a {
     font-style: italic;
 }
 
+/* Penegasan teks Call-to-Action "Lets Connect" */
 .connect {
     font-style: normal;
     font-weight: 600;
 }
 
+/* ==========================================================================
+   4. SHOWCASE YOUTUBE THUMBNAILS
+   ========================================================================== */
 .youtube-thumbnail {
     display: flex;
     justify-content: center;
@@ -79,6 +95,7 @@ nav a {
     transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
+/* Efek hover interaktif kartu video */
 .youtube-thumbnail a:hover {
     border-color: #aaa99f;
     transform: translateY(-3px);
@@ -92,20 +109,26 @@ nav a {
     object-fit: cover;
 }
 
-
+/* ==========================================================================
+   5. KONTAINER UTAMA KONTEN (MAIN BACKGROUND CARD)
+   ========================================================================== */
 .main-background {
-    background-color:#131312;
+    background-color: #131312;
     padding: 30px;
     border-radius: 40px;
     margin: 40px;
 }
 
+/* Garis pembatas horizontal dalam konten utama */
 main hr {
     border: 0;
     border-top: 1px solid #393937;
     margin: 40px 0;
 }
 
+/* ==========================================================================
+   6. JUDUL SETIAP SECTION KONTEN
+   ========================================================================== */
 #experiences h2,
 #organisasi h2,
 #sertifikasi h2,
@@ -116,6 +139,9 @@ main hr {
     font-weight: 500;
 }
 
+/* ==========================================================================
+   7. SECTION EXPERIENCES (CSS GRID 3 KOLOM)
+   ========================================================================== */
 .experience-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -144,6 +170,9 @@ main hr {
     line-height: 1.7;
 }
 
+/* ==========================================================================
+   8. SECTION ORGANISASI & SERTIFIKASI (LIST STYLING)
+   ========================================================================== */
 #experiences li,
 #organisasi li,
 #sertifikasi li {
@@ -152,6 +181,9 @@ main hr {
     line-height: 1.7;
 }
 
+/* ==========================================================================
+   9. SECTION HUBUNGI SAYA / CONNECT (CONTACT BUTTON CARDS)
+   ========================================================================== */
 .contact-intro {
     margin: -8px 0 24px;
     font-family: Montserrat, sans-serif;
@@ -190,36 +222,47 @@ main hr {
     text-transform: uppercase;
 }
 
+/* ==========================================================================
+   10. SECTION ABOUT ME (TABEL BIOGRAFI & AVATAR PROFIL)
+   ========================================================================== */
 .table1 {
     padding: 20px;
 }
 
 .table2 {
-    font-family: montserrat;
+    font-family: montserrat, sans-serif;
     font-size: 20px;
     font-weight: 200;
 }
 
+/* Drop-cap artistik huruf pertama paragraf */
 .Saya {
-    font-family:"Pixelify Sans" ;
+    font-family: "Pixelify Sans";
     font-size: 50px;
     padding-right: 5px;
 }
+
+/* Foto profil berbingkai melengkung */
 .profile-picture {
-    width:320px;
-    height:320px;
+    width: 320px;
+    height: 320px;
     border-radius: 20px;
     object-fit: cover;
     display: block;
     margin: 0 auto;
 }
 
+/* ==========================================================================
+   11. MEDIA QUERIES (DESAIN RESPONSIF LAYAR FLEKSIBEL)
+   ========================================================================== */
+/* Responsif Tablet: Grid 3 kolom beralih menjadi 1 kolom bertumpuk */
 @media (max-width: 900px) {
     .experience-list {
         grid-template-columns: 1fr;
     }
 }
 
+/* Responsif Mobile: Penyesuaian margin kontainer & thumbnail Youtube */
 @media (max-width: 700px) {
     .main-background {
         margin: 24px 12px;
