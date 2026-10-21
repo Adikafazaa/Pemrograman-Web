@@ -1,12 +1,6 @@
--- Database: `keuangan`
--- Tugas CRUD 1 Tabel - IFB-211 Pemrograman Web
-
 CREATE DATABASE IF NOT EXISTS `keuangan` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `keuangan`;
 
--- --------------------------------------------------------
-
--- Struktur dari tabel `catatan_keuangan`
 CREATE TABLE IF NOT EXISTS `catatan_keuangan` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tanggal` date NOT NULL,
@@ -17,7 +11,6 @@ CREATE TABLE IF NOT EXISTS `catatan_keuangan` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data awal untuk tabel `catatan_keuangan`
 INSERT INTO `catatan_keuangan` (`id`, `tanggal`, `jenis`, `kategori`, `nominal`, `keterangan`) VALUES
 (1, '2026-10-01', 'Pemasukan', 'Uang Saku Bulanan', 2500000, 'Kiriman uang saku awal bulan dari orang tua'),
 (2, '2026-10-03', 'Pengeluaran', 'Kebutuhan Kuliah', 150000, 'Beli modul cetak & buku catatan praktikum'),

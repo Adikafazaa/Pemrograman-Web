@@ -1,0 +1,179 @@
+<mxfile host="Electron" modified="2026-10-21T00:00:00.000Z" agent="Antigravity-Agent" version="24.7.8" type="device">
+  <diagram id="diag_arsitektur_v3" name="Arsitektur CRUD Jalur Rapi">
+    <mxGraphModel dx="1200" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="860" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- 0. HEADER TITLE -->
+        <mxCell id="hdr_main" value="PETA ALUR ARSITEKTUR FILE CRUD PHP NATIVE (CATATAN KEUANGAN)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#1e3a8a;strokeColor=#1e3a8a;fontColor=#ffffff;fontSize=14;fontStyle=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1170" height="38" as="geometry" />
+        </mxCell>
+
+        <!-- PUSAT NAVIGASI UTAMA (KIRI): index.php -->
+        <mxCell id="box_index" value="&lt;b&gt;index.php&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px; color: #1e3a8a;&quot;&gt;&lt;b&gt;[ PUSAT NAVIGASI &amp;amp; READ DATA ]&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;hr style=&quot;margin: 6px 0;&quot;&gt;&lt;div align=&quot;left&quot; style=&quot;font-size: 9.5px; line-height: 1.45; padding-left: 8px; color: #334155;&quot;&gt;&amp;bull; Tabel Riwayat Seluruh Transaksi&lt;br&gt;&amp;bull; Kartu Total Pemasukan &amp;amp; Pengeluaran&lt;br&gt;&amp;bull; Ringkasan Sisa Saldo Kas&lt;br&gt;&amp;bull; Tombol &lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;[+ Tambah Transaksi]&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&amp;bull; Tombol &lt;font color=&quot;#b45309&quot;&gt;&lt;b&gt;[Ubah]&lt;/b&gt;&lt;/font&gt; per baris data&lt;br&gt;&amp;bull; Tombol &lt;font color=&quot;#b91c1c&quot;&gt;&lt;b&gt;[Hapus]&lt;/b&gt;&lt;/font&gt; per baris data&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eff6ff;strokeColor=#2563eb;strokeWidth=2;fontSize=11;fontColor=#0f172a;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="230" height="300" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================== -->
+        <!-- JALUR 1: OPERASI CREATE (TAMBAH DATA) - BAGIAN ATAS HIJAU       -->
+        <!-- ============================================================== -->
+        <mxCell id="lbl_lane_create" value="JALUR 1: CREATE (TAMBAH TRANSAKSI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#15803d;" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- tambah.php -->
+        <mxCell id="box_tambah" value="&lt;b&gt;tambah.php&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #334155;&quot;&gt;&amp;bull; Form Input Transaksi Baru&lt;br&gt;&amp;bull; Input: tanggal, jenis, nominal...&lt;br&gt;&amp;bull; &lt;b&gt;&amp;lt;form method=&quot;POST&quot;&lt;br&gt;action=&quot;proses_tambah.php&quot;&amp;gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f0fdf4;strokeColor=#16a34a;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="105" width="220" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- proses_tambah.php -->
+        <mxCell id="box_act_tambah" value="&lt;b&gt;proses_tambah.php&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #334155;&quot;&gt;1. Tangkap variabel dari &lt;b&gt;$_POST[...]&lt;/b&gt;&lt;br&gt;2. &lt;b&gt;INSERT INTO catatan_keuangan...&lt;/b&gt;&lt;br&gt;3. &lt;b&gt;header(&quot;location:index.php&quot;)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#16a34a;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="640" y="105" width="230" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 1A: index.php -> tambah.php -->
+        <mxCell id="arr_c1" value="Klik '+ Tambah'" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=1.8;fontSize=9.5;fontColor=#15803d;exitX=0.6;exitY=0;entryX=0;entryY=0.5;" edge="1" parent="1" source="box_index" target="box_tambah">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="178" y="150" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Panah 1B: tambah.php -> proses_tambah.php -->
+        <mxCell id="arr_c2" value="Kirim Form (POST)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;fontSize=9.5;fontColor=#15803d;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="box_tambah" target="box_act_tambah">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 1C: proses_tambah.php -> DB (INSERT) -->
+        <mxCell id="arr_c3" value="INSERT INTO..." style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#16a34a;strokeWidth=2;fontSize=9.5;fontColor=#15803d;exitX=1;exitY=0.5;entryX=0;entryY=0.2;" edge="1" parent="1" source="box_act_tambah" target="box_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 1D: proses_tambah.php -> index.php (REDIRECT DI JALUR ATAS) -->
+        <mxCell id="arr_c4" value="header(&quot;location:index.php&quot;) [Redirect]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=1.5;dashed=1;fontSize=9;fontColor=#1d4ed8;exitX=0.5;exitY=0;entryX=0.2;entryY=0;" edge="1" parent="1" source="box_act_tambah" target="box_index">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="70" />
+              <mxPoint x="86" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================== -->
+        <!-- JALUR 2: OPERASI UPDATE (UBAH DATA) - BAGIAN TENGAH ORANYE      -->
+        <!-- ============================================================== -->
+        <mxCell id="lbl_lane_update" value="JALUR 2: UPDATE (UBAH TRANSAKSI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#b45309;" vertex="1" parent="1">
+          <mxGeometry x="340" y="325" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ubah.php -->
+        <mxCell id="box_ubah" value="&lt;b&gt;ubah.php?id=X&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #334155;&quot;&gt;&amp;bull; Tangkap id via &lt;b&gt;$_GET['id']&lt;/b&gt;&lt;br&gt;&amp;bull; Pre-populate data lama ke form&lt;br&gt;&amp;bull; &lt;b&gt;&amp;lt;input type=&quot;hidden&quot; name=&quot;id&quot;&amp;gt;&lt;/b&gt;&lt;br&gt;&amp;bull; &lt;b&gt;&amp;lt;form method=&quot;POST&quot;&lt;br&gt;action=&quot;update.php&quot;&amp;gt;&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#d97706;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="340" y="350" width="220" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- update.php -->
+        <mxCell id="box_act_update" value="&lt;b&gt;update.php&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #334155;&quot;&gt;1. Tangkap variabel &amp;amp; &lt;b&gt;$_POST['id']&lt;/b&gt;&lt;br&gt;2. &lt;b&gt;UPDATE catatan_keuangan SET...&lt;br&gt;WHERE id='$id'&lt;/b&gt;&lt;br&gt;3. &lt;b&gt;header(&quot;location:index.php&quot;)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d97706;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="640" y="350" width="230" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 2A: index.php -> ubah.php -->
+        <mxCell id="arr_u1" value="Klik 'Ubah' (GET ?id=X)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d97706;strokeWidth=1.8;fontSize=9.5;fontColor=#b45309;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="box_index" target="box_ubah">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 2B: ubah.php -> update.php -->
+        <mxCell id="arr_u2" value="Submit Form (POST)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d97706;strokeWidth=2;fontSize=9.5;fontColor=#b45309;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="box_ubah" target="box_act_update">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 2C: update.php -> DB (UPDATE) -->
+        <mxCell id="arr_u3" value="UPDATE ... WHERE id=X" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#d97706;strokeWidth=2;fontSize=9.5;fontColor=#b45309;exitX=1;exitY=0.5;entryX=0;entryY=0.55;" edge="1" parent="1" source="box_act_update" target="box_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 2D: update.php -> index.php (REDIRECT DI JALUR TENGAH BAWAH) -->
+        <mxCell id="arr_u4" value="header(&quot;location:index.php&quot;)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=1.5;dashed=1;fontSize=9;fontColor=#1d4ed8;exitX=0.5;exitY=1;entryX=1;entryY=0.75;" edge="1" parent="1" source="box_act_update" target="box_index">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="475" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================== -->
+        <!-- JALUR 3: OPERASI DELETE (HAPUS DATA) - BAGIAN BAWAH MERAH       -->
+        <!-- ============================================================== -->
+        <mxCell id="lbl_lane_delete" value="JALUR 3: DELETE (HAPUS TRANSAKSI)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#b91c1c;" vertex="1" parent="1">
+          <mxGeometry x="640" y="525" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- hapus.php -->
+        <mxCell id="box_act_hapus" value="&lt;b&gt;hapus.php?id=X&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #334155;&quot;&gt;1. Tangkap parameter via &lt;b&gt;$_GET['id']&lt;/b&gt;&lt;br&gt;2. &lt;b&gt;DELETE FROM catatan_keuangan...&lt;br&gt;WHERE id='$id'&lt;/b&gt;&lt;br&gt;3. &lt;b&gt;header(&quot;location:index.php&quot;)&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fef2f2;strokeColor=#dc2626;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="640" y="550" width="230" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 3A: index.php -> hapus.php -->
+        <mxCell id="arr_d1" value="Klik 'Hapus' (GET ?id=X)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=1.8;fontSize=9.5;fontColor=#b91c1c;exitX=0.6;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="box_index" target="box_act_hapus">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="178" y="595" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Panah 3B: hapus.php -> DB (DELETE) -->
+        <mxCell id="arr_d2" value="DELETE ... WHERE id=X" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#dc2626;strokeWidth=2;fontSize=9.5;fontColor=#b91c1c;exitX=1;exitY=0.5;entryX=0;entryY=0.85;" edge="1" parent="1" source="box_act_hapus" target="box_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Panah 3C: hapus.php -> index.php (REDIRECT DI JALUR BAWAH) -->
+        <mxCell id="arr_d3" value="header(&quot;location:index.php&quot;) [Redirect]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=1.5;dashed=1;fontSize=9;fontColor=#1d4ed8;exitX=0.5;exitY=1;entryX=0.2;entryY=1;" edge="1" parent="1" source="box_act_hapus" target="box_index">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="755" y="670" />
+              <mxPoint x="86" y="670" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================== -->
+        <!-- BASIS DATA & KONEKSI (KANAN)                                   -->
+        <!-- ============================================================== -->
+        <!-- koneksi.php -->
+        <mxCell id="box_koneksi" value="&lt;b&gt;koneksi.php&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 9.5px; color: #475569;&quot;&gt;&amp;bull; &lt;b&gt;mysqli_connect()&lt;/b&gt;&lt;br&gt;&amp;bull; Host: localhost, DB: keuangan&lt;br&gt;&amp;bull; Dieksekusi via &lt;b&gt;include 'koneksi.php'&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fdf4ff;strokeColor=#a855f7;strokeWidth=1.8;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="960" y="80" width="250" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- MySQL Database Cylinder -->
+        <mxCell id="box_mysql" value="&lt;b&gt;Basis Data MySQL&lt;/b&gt;&lt;br&gt;&lt;hr style=&quot;margin: 4px 0;&quot;&gt;Tabel: &lt;b&gt;catatan_keuangan&lt;/b&gt;&lt;br&gt;&lt;div align=&quot;left&quot; style=&quot;font-size: 9.5px; line-height: 1.45; padding-left: 12px; color: #334155;&quot;&gt;&amp;bull; &lt;b&gt;id&lt;/b&gt; : INT(11) [PK, AutoInc]&lt;br&gt;&amp;bull; &lt;b&gt;tanggal&lt;/b&gt; : DATE&lt;br&gt;&amp;bull; &lt;b&gt;jenis&lt;/b&gt; : VARCHAR(20)&lt;br&gt;&amp;bull; &lt;b&gt;kategori&lt;/b&gt; : VARCHAR(50)&lt;br&gt;&amp;bull; &lt;b&gt;nominal&lt;/b&gt; : INT(11)&lt;br&gt;&amp;bull; &lt;b&gt;keterangan&lt;/b&gt; : VARCHAR(255)&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=14;fillColor=#fdf4ff;strokeColor=#a855f7;strokeWidth=2;fontSize=10.5;fontColor=#0f172a;" vertex="1" parent="1">
+          <mxGeometry x="960" y="195" width="250" height="445" as="geometry" />
+        </mxCell>
+
+        <!-- KONEKSI TO DATABASE ARROW -->
+        <mxCell id="arr_k_db" value="Buka Koneksi" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#a855f7;strokeWidth=1.5;dashed=1;fontSize=9.5;fontColor=#7e22ce;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="box_koneksi" target="box_mysql">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- 4. READ: DB -> index.php (SELECT *) -->
+        <mxCell id="arr_read_query" value="SELECT * FROM catatan_keuangan (Ambil Riwayat Transaksi)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#2563eb;strokeWidth=2;fontSize=9.5;fontColor=#1d4ed8;exitX=0;exitY=0.08;entryX=1;entryY=0.15;" edge="1" parent="1" source="box_mysql" target="box_index">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="231" />
+              <mxPoint x="910" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================== -->
+        <!-- BOTTOM LEGENDA BOX                                             -->
+        <!-- ============================================================== -->
+        <mxCell id="box_legend" value="&lt;b&gt;Legenda Alur Panah:&lt;/b&gt;&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;bull; Biru Solid&lt;/b&gt;: Read (Tampil Data)&lt;/font&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#15803d&quot;&gt;&lt;b&gt;&amp;bull; Hijau&lt;/b&gt;: Create (Tambah)&lt;/font&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#b45309&quot;&gt;&lt;b&gt;&amp;bull; Oranye&lt;/b&gt;: Update (Ubah)&lt;/font&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#b91c1c&quot;&gt;&lt;b&gt;&amp;bull; Merah&lt;/b&gt;: Delete (Hapus)&lt;/font&gt;&amp;nbsp;&amp;nbsp;|&amp;nbsp;&amp;nbsp;&lt;font color=&quot;#1d4ed8&quot;&gt;&lt;b&gt;&amp;bull; Biru Putus-putus&lt;/b&gt;: Pengalihan Layar header('location:index.php')&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#cbd5e1;fontSize=10;fontColor=#334155;align=center;" vertex="1" parent="1">
+          <mxGeometry x="40" y="715" width="1170" height="35" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
