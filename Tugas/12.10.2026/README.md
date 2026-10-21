@@ -25,13 +25,8 @@ Menyelesaikan dan mendokumentasikan serangkaian modul latihan interaktif resmi p
 
 ---
 
-## 📑 Berkas Laporan Pengumpulan (Format PDF)
+## 📑 Berkas Laporan Pengumpulan
 
-Tersedia beberapa versi laporan pengumpulan sesuai instruksi pengumpulan:
-
-| Nama Berkas | Cakupan Modul | Keterangan |
-|---|---|---|
-| [`152025013_Adika_Faza_Athallah_tugas_4.pdf`](152025013_Adika_Faza_Athallah_tugas_4.pdf) | **Lengkap (6 Halaman)** | Laporan pengumpulan utama memuat bukti pengerjaan 12 topik HTML & CSS. |
-| [`152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf`](152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf) | **Lengkap (HTML + CSS)** | Versi gabungan bukti modul HTML dan CSS. |
-| [`152025013_Adika_Faza_Athallah_tugas_4_HTML.pdf`](152025013_Adika_Faza_Athallah_tugas_4_HTML.pdf) | **Khusus HTML** | Versi terpisah untuk pengumpulan khusus modul HTML (Topik 1-6). |
-| [`152025013_Adika_Faza_Athallah_tugas_4_CSS.pdf`](152025013_Adika_Faza_Athallah_tugas_4_CSS.pdf) | **Khusus CSS** | Versi terpisah untuk pengumpulan khusus modul CSS (Topik 7-12). |
+* **Laporan Resmi Gabungan HTML & CSS:**  
+  [`152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf`](152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf)  
+  *(Memuat lengkap tangkapan layar bukti pengerjaan seluruh 12 topik modul W3Schools).*

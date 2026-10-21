@@ -70,10 +70,7 @@ IFB-211-Pemrograman-Web/
     11. *CSS Comments Exercises*
     12. *CSS Colors Exercises*
 * **Luaran Berkas PDF Laporan:**
-  * [`152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf`](Tugas/12.10.2026/152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf) *(Lengkap Gabungan HTML & CSS)*
-  * [`152025013_Adika_Faza_Athallah_tugas_4_HTML.pdf`](Tugas/12.10.2026/152025013_Adika_Faza_Athallah_tugas_4_HTML.pdf) *(Khusus 6 Topik HTML)*
-  * [`152025013_Adika_Faza_Athallah_tugas_4_CSS.pdf`](Tugas/12.10.2026/152025013_Adika_Faza_Athallah_tugas_4_CSS.pdf) *(Khusus 6 Topik CSS)*
-  * [`152025013_Adika_Faza_Athallah_tugas_4.pdf`](Tugas/12.10.2026/152025013_Adika_Faza_Athallah_tugas_4.pdf) *(Laporan Pengumpulan Utama)*
+  * [`152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf`](Tugas/12.10.2026/152025013_Adika_Faza_Athallah_tugas_4_HTML_CSS.pdf) *(Laporan resmi lengkap bukti pengerjaan 12 topik modul W3Schools HTML & CSS)*
 
 ---
 
