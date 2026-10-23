@@ -14,9 +14,9 @@
         .table-custom th, .table-custom td { padding: 13px 16px; font-size: 14px; vertical-align: middle; border-color: #f1f5f9; }
         .badge-masuk { background-color: #d1fae5; color: #065f46; font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 12px; }
         .badge-keluar { background-color: #ffe4e6; color: #9f1239; font-weight: 600; padding: 5px 14px; border-radius: 20px; font-size: 12px; }
-        .btn-action-edit { background: linear-gradient(135deg, #334155 0%, #475569 100%); color: #fff; border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; text-decoration: none; }
+        .btn-action-edit { background: linear-gradient(135deg, #334155 0%, #475569 100%); color: #fff; border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; white-space: nowrap; }
         .btn-action-edit:hover { color: #fff; opacity: 0.9; }
-        .btn-action-delete { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); color: #fff; border-radius: 6px; padding: 5px 14px; font-size: 13px; font-weight: 500; text-decoration: none; }
+        .btn-action-delete { background: linear-gradient(135deg, #e11d48 0%, #be123c 100%); color: #fff; border-radius: 6px; padding: 6px 14px; font-size: 13px; font-weight: 500; text-decoration: none; display: inline-block; white-space: nowrap; }
         .btn-action-delete:hover { color: #fff; opacity: 0.9; }
     </style>
 </head>
@@ -40,7 +40,7 @@
                             <th>Kategori</th>
                             <th style="width: 150px; text-align: right;">Nominal</th>
                             <th>Keterangan</th>
-                            <th style="width: 160px;">Aksi</th>
+                            <th style="width: 180px; min-width: 170px; white-space: nowrap;">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -63,9 +63,11 @@
                             <td class="fw-semibold text-secondary"><?php echo $d['kategori']; ?></td>
                             <td class="fw-bold text-end">Rp <?php echo number_format($d['nominal'], 0, ',', '.'); ?></td>
                             <td class="text-muted"><?php echo $d['keterangan']; ?></td>
-                            <td class="text-center">
-                                <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn-action-edit me-1">Ubah</a>
-                                <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn-action-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                            <td class="text-center" style="white-space: nowrap;">
+                                <div class="d-inline-flex gap-2">
+                                    <a href="ubah.php?id=<?php echo $d['id']; ?>" class="btn-action-edit">Ubah</a>
+                                    <a href="hapus.php?id=<?php echo $d['id']; ?>" class="btn-action-delete" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                                </div>
                             </td>
                         </tr>
                         <?php } ?>
