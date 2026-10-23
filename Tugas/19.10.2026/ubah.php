@@ -3,14 +3,23 @@
 <head>
     <title>Ubah Catatan Keuangan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8fafc; font-family: system-ui, sans-serif; color: #1e293b; }
+        .card-header-custom { background-color: #334155; color: #fff; padding: 14px 20px; }
+        .btn-slate { background-color: #334155; color: #fff; border: none; font-weight: 500; border-radius: 6px; padding: 8px 20px; }
+        .btn-slate:hover { background-color: #1e293b; color: #fff; }
+        .btn-secondary-custom { background-color: #64748b; color: #fff; border: none; border-radius: 6px; padding: 8px 16px; text-decoration: none; display: inline-block; }
+        .btn-secondary-custom:hover { background-color: #475569; color: #fff; }
+        .form-label { font-weight: 500; font-size: 14px; color: #334155; }
+    </style>
 </head>
-<body class="bg-light">
-    <div class="container mt-4" style="max-width: 600px;">
-        <div class="card shadow-sm">
-            <div class="card-header bg-warning text-dark">
-                <h4 class="mb-0">Ubah Catatan Keuangan</h4>
+<body>
+    <div class="container mt-4 mb-5" style="max-width: 580px;">
+        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+            <div class="card-header-custom">
+                <h4 class="mb-0 fs-5 fw-semibold">Ubah Catatan Keuangan</h4>
             </div>
-            <div class="card-body">
+            <div class="card-body p-4 bg-white">
                 <?php
                 include 'koneksi.php';
                 $id = $_GET['id'];
@@ -48,8 +57,10 @@
                         <input type="text" name="keterangan" class="form-control" value="<?php echo $d['keterangan']; ?>" required>
                     </div>
 
-                    <button type="submit" class="btn btn-warning">Update</button>
-                    <a href="index.php" class="btn btn-secondary">Kembali</a>
+                    <div class="pt-2">
+                        <button type="submit" class="btn btn-slate">Update</button>
+                        <a href="index.php" class="btn-secondary-custom ms-2">Kembali</a>
+                    </div>
                 </form>
                 <?php 
                 } 
