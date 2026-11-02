@@ -1,47 +1,267 @@
+/* ========================================================
+   Neumorphism Dark Theme (Base: #131312)
+   High-Contrast Light Data Table (Pure Monochrome)
+   Tugas 26.10.2026 - Pemrograman Web
+   ======================================================== */
+
+:root {
+    --bg-base: #131312;
+    --shadow-dark: #080807;
+    --shadow-light: #20201e;
+    --shadow-inset-dark: #070706;
+    --shadow-inset-light: #222220;
+    --text-primary: #ededed;
+    --text-secondary: #9e9e9e;
+    --accent-hover: #ffffff;
+    --border-subtle: #1c1c1a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 28px 20px;
+    min-height: 100vh;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h1, h2 {
-    color: #222;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 2px var(--shadow-dark);
 }
 
+h1 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--border-subtle);
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.35rem;
+    margin-top: 36px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 8px;
+}
+
+p {
+    margin: 16px 0;
+    color: var(--text-secondary);
+}
+
+/* Links & Navigation Buttons (Dark Neumorphic) */
 a {
-    color: #0066cc;
-    text-decoration: underline;
+    color: var(--text-primary);
+    text-decoration: none;
+    background: var(--bg-base);
+    padding: 8px 16px;
+    border-radius: 9px;
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 3px 2px;
+    box-shadow: 3px 3px 7px var(--shadow-dark),
+                -3px -3px 7px var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: all 0.2s ease-in-out;
 }
 
+a:hover {
+    color: var(--accent-hover);
+    box-shadow: inset 2px 2px 5px var(--shadow-dark),
+                inset -2px -2px 5px var(--shadow-light);
+}
+
+a:active {
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+}
+
+/* ========================================================
+   Data Table (Kontras Bersih / Non-Hitam)
+   ======================================================== */
 table {
-    border-collapse: collapse;
     width: 100%;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 18px 0 32px 0;
+    background: #ffffff;
+    color: #1a1a18;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 8px 8px 22px var(--shadow-dark),
+                -8px -8px 22px var(--shadow-light);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 8px 12px;
+    padding: 13px 16px;
     text-align: left;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
 }
 
 th {
-    background-color: #f2f2f2;
+    background: #f1f2f5;
+    color: #2c2d30;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    font-weight: 700;
+    border-bottom: 2px solid #dcdee3;
 }
 
+td {
+    color: #242528;
+    font-size: 0.92rem;
+    background-color: #ffffff;
+}
+
+tr:nth-child(even) td {
+    background-color: #f9f9fb;
+}
+
+tr:hover td {
+    background-color: #f0f2f7;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Action Links inside Table */
+table a {
+    background: #ffffff;
+    color: #1a1a18;
+    padding: 5px 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    border: 1px solid #d5d7dc;
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.06),
+                -2px -2px 5px rgba(255, 255, 255, 0.9);
+}
+
+table a:hover {
+    background: #131312;
+    color: #ffffff;
+    border-color: #131312;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================================
+   Forms (Neumorphism Card)
+   ======================================================== */
+form {
+    background: var(--bg-base);
+    padding: 28px 24px;
+    border-radius: 16px;
+    box-shadow: 7px 7px 18px var(--shadow-dark),
+                -7px -7px 18px var(--shadow-light);
+    margin: 24px 0;
+    max-width: 500px;
+    border: 1px solid var(--border-subtle);
+}
+
+form p {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 7px;
+}
+
+/* Inset Neumorphic Inputs & Selects */
 input[type="text"],
 input[type="email"],
 select {
-    width: 320px;
-    padding: 6px;
-    border: 1px solid #ccc;
+    width: 100%;
+    padding: 11px 15px;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    border: 1px solid #1a1a17;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    box-shadow: inset 3px 3px 6px var(--shadow-inset-dark),
+                inset -3px -3px 6px var(--shadow-inset-light);
+    outline: none;
+    transition: all 0.2s ease;
     box-sizing: border-box;
 }
 
-button {
-    padding: 6px 14px;
-    background-color: #eee;
-    border: 1px solid #999;
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #383835;
+    box-shadow: inset 4px 4px 8px var(--shadow-inset-dark),
+                inset -4px -4px 8px #262623;
+}
+
+select option {
+    background: #191918;
+    color: #ededed;
+}
+
+/* Submit Buttons */
+button,
+input[type="submit"] {
+    padding: 10px 22px;
+    background: var(--bg-base);
+    color: var(--text-primary);
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1px solid var(--border-subtle);
+    border-radius: 9px;
     cursor: pointer;
+    box-shadow: 4px 4px 10px var(--shadow-dark),
+                -4px -4px 10px var(--shadow-light);
+    transition: all 0.2s ease-in-out;
+    margin-left: 8px;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    color: #ffffff;
+    box-shadow: 2px 2px 6px var(--shadow-dark),
+                -2px -2px 6px var(--shadow-light);
+}
+
+button:active,
+input[type="submit"]:active {
+    box-shadow: inset 3px 3px 6px var(--shadow-dark),
+                inset -3px -3px 6px var(--shadow-light);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 16px 12px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 20px 16px;
+    }
 }
