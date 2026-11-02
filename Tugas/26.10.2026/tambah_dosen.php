@@ -1,15 +1,24 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
 include 'database.php';
 
-if (isset($_POST['simpan'])) {
-    $nip   = $_POST['nip'];
-    $nama  = $_POST['nama'];
-    $email = $_POST['email'];
-    $ttl   = $_POST['ttl'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nip   = trim($_POST['nip'] ?? '');
+    $nama  = trim($_POST['nama'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $ttl   = trim($_POST['ttl'] ?? '');
 
-    mysqli_query($koneksi, "INSERT INTO dosen_wali VALUES(NULL, '$nip', '$nama', '$email', '$ttl')");
+    $stmt = mysqli_prepare($koneksi, "INSERT INTO dosen_wali (nip, nama, email, ttl) VALUES (?, ?, ?, ?)");
+    mysqli_stmt_bind_param($stmt, "ssss", $nip, $nama, $email, $ttl);
+    mysqli_stmt_execute($stmt);
 
     header("location:index.php");
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -21,28 +30,32 @@ if (isset($_POST['simpan'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tambah Dosen Wali</h1>
-    <form method="post" action="">
-        <p>
-            <label>NIP</label><br>
-            <input type="text" name="nip" required>
-        </p>
-        <p>
-            <label>Nama</label><br>
-            <input type="text" name="nama" required>
-        </p>
-        <p>
-            <label>Email</label><br>
-            <input type="email" name="email" required>
-        </p>
-        <p>
-            <label>Tempat, Tanggal Lahir</label><br>
-            <input type="text" name="ttl" required>
-        </p>
-        <p>
-            <a href="index.php">Kembali</a>
-            <button type="submit" name="simpan">Simpan</button>
-        </p>
-    </form>
+    <div class="container">
+        <h1>Tambah Dosen Wali</h1>
+        <div class="card-form">
+            <form method="post" action="">
+                <div class="form-group">
+                    <label>NIP</label>
+                    <input type="text" name="nip" placeholder="Contoh: DW-15-04" required>
+                </div>
+                <div class="form-group">
+                    <label>Nama Dosen</label>
+                    <input type="text" name="nama" placeholder="Masukkan nama dosen" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="dosen@ngampus.ac.id" required>
+                </div>
+                <div class="form-group">
+                    <label>Tempat, Tanggal Lahir</label>
+                    <input type="text" name="ttl" placeholder="Contoh: Jakarta, 01-01-1975" required>
+                </div>
+                <div class="form-actions">
+                    <a href="index.php" class="btn-secondary">Kembali</a>
+                    <button type="submit" class="btn-primary">Simpan Dosen</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

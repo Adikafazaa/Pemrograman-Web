@@ -1,22 +1,40 @@
 <?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit;
+}
+
 include 'database.php';
 
-if (isset($_POST['update'])) {
-    $id_dosen = $_POST['id_dosen'];
-    $nip      = $_POST['nip'];
-    $nama     = $_POST['nama'];
-    $email    = $_POST['email'];
-    $ttl      = $_POST['ttl'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $id_dosen = (int)($_POST['id_dosen'] ?? 0);
+    $nip      = trim($_POST['nip'] ?? '');
+    $nama     = trim($_POST['nama'] ?? '');
+    $email    = trim($_POST['email'] ?? '');
+    $ttl      = trim($_POST['ttl'] ?? '');
 
-    mysqli_query($koneksi, "UPDATE dosen_wali SET nip='$nip', nama='$nama', email='$email', ttl='$ttl' WHERE id_dosen='$id_dosen'");
+    if ($id_dosen > 0) {
+        $stmt = mysqli_prepare($koneksi, "UPDATE dosen_wali SET nip = ?, nama = ?, email = ?, ttl = ? WHERE id_dosen = ?");
+        mysqli_stmt_bind_param($stmt, "ssssi", $nip, $nama, $email, $ttl, $id_dosen);
+        mysqli_stmt_execute($stmt);
+    }
 
     header("location:index.php");
     exit;
 }
 
-$id_dosen = $_GET['id_dosen'] ?? $_GET['id'] ?? 0;
-$data_dosen = mysqli_query($koneksi, "SELECT * FROM dosen_wali WHERE id_dosen='$id_dosen'");
-$d = mysqli_fetch_array($data_dosen);
+$id_dosen = (int)($_GET['id_dosen'] ?? $_GET['id'] ?? 0);
+$stmt = mysqli_prepare($koneksi, "SELECT * FROM dosen_wali WHERE id_dosen = ?");
+mysqli_stmt_bind_param($stmt, "i", $id_dosen);
+mysqli_stmt_execute($stmt);
+$res = mysqli_stmt_get_result($stmt);
+$d = mysqli_fetch_array($res);
+
+if (!$d) {
+    header("location:index.php");
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,29 +45,33 @@ $d = mysqli_fetch_array($data_dosen);
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Ubah Data Dosen Wali</h1>
-    <form method="post" action="">
-        <input type="hidden" name="id_dosen" value="<?php echo $d['id_dosen']; ?>">
-        <p>
-            <label>NIP</label><br>
-            <input type="text" name="nip" value="<?php echo $d['nip']; ?>" required>
-        </p>
-        <p>
-            <label>Nama</label><br>
-            <input type="text" name="nama" value="<?php echo $d['nama']; ?>" required>
-        </p>
-        <p>
-            <label>Email</label><br>
-            <input type="email" name="email" value="<?php echo $d['email']; ?>" required>
-        </p>
-        <p>
-            <label>Tempat, Tanggal Lahir</label><br>
-            <input type="text" name="ttl" value="<?php echo $d['ttl']; ?>" required>
-        </p>
-        <p>
-            <a href="index.php">Kembali</a>
-            <button type="submit" name="update">Simpan Perubahan</button>
-        </p>
-    </form>
+    <div class="container">
+        <h1>Ubah Data Dosen Wali</h1>
+        <div class="card-form">
+            <form method="post" action="">
+                <input type="hidden" name="id_dosen" value="<?php echo (int)$d['id_dosen']; ?>">
+                <div class="form-group">
+                    <label>NIP</label>
+                    <input type="text" name="nip" value="<?php echo htmlspecialchars($d['nip']); ?>" required>
+                </div>
+                <div class="form-group">
+                    <label>Nama Dosen</label>
+                    <input type="text" name="nama" value="<?php echo htmlspecialchars($d['nama']); ?>" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" value="<?php echo htmlspecialchars($d['email']); ?>" required>
+                </div>
+                <div class="form-group">
+                    <label>Tempat, Tanggal Lahir</label>
+                    <input type="text" name="ttl" value="<?php echo htmlspecialchars($d['ttl']); ?>" required>
+                </div>
+                <div class="form-actions">
+                    <a href="index.php" class="btn-secondary">Kembali</a>
+                    <button type="submit" class="btn-primary">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

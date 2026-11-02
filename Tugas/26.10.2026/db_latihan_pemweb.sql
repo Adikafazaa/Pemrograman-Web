@@ -3,6 +3,15 @@ USE db_latihan_pemweb;
 
 DROP TABLE IF EXISTS mahasiswa;
 DROP TABLE IF EXISTS dosen_wali;
+DROP TABLE IF EXISTS users;
+
+CREATE TABLE users (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    nama_lengkap VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 CREATE TABLE dosen_wali (
     id_dosen INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -22,6 +31,9 @@ CREATE TABLE mahasiswa (
     CONSTRAINT fk_mahasiswa_dosen FOREIGN KEY (id_dosen) REFERENCES dosen_wali(id_dosen)
         ON UPDATE CASCADE ON DELETE SET NULL
 );
+
+INSERT INTO users (username, password, nama_lengkap) VALUES
+('admin', '$2y$10$QY1J.kPDSV24TCjZQCYlKOy2l62kv4OfHKGAvaaCdhLcciIVGcaDy', 'Administrator');
 
 INSERT INTO dosen_wali (nip, nama, email, ttl) VALUES
 ('DW-15-01', 'Asep Sunandar', 'asep.sunandar@ngampus.ac.id', 'Kuningan, 17-08-1945'),
