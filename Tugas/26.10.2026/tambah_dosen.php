@@ -16,6 +16,7 @@ if (isset($_POST['simpan'])) {
 <html>
 <head>
     <title>Tambah Dosen Wali</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tambah Dosen Wali</h1>

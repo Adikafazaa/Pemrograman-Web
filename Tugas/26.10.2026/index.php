@@ -5,6 +5,7 @@ include 'database.php';
 <html>
 <head>
     <title>Data Mahasiswa & Dosen Wali</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Data Mahasiswa</h1>
@@ -40,6 +41,7 @@ include 'database.php';
             <td><?php echo $mhs['ttl']; ?></td>
             <td><?php echo $mhs['nama_dosen']; ?></td>
             <td>
+                <a href="ubah_mahasiswa.php?id_mahasiswa=<?php echo $mhs['id_mahasiswa']; ?>">Ubah</a> | 
                 <a href="delete_mahasiswa.php?id_mahasiswa=<?php echo $mhs['id_mahasiswa']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
             </td>
         </tr>
@@ -71,6 +73,7 @@ include 'database.php';
             <td><?php echo $d['email']; ?></td>
             <td><?php echo $d['ttl']; ?></td>
             <td>
+                <a href="ubah_dosen.php?id_dosen=<?php echo $d['id_dosen']; ?>">Ubah</a> | 
                 <a href="delete_dosen.php?id_dosen=<?php echo $d['id_dosen']; ?>" onclick="return confirm('Yakin ingin menghapus data dosen ini?')">Hapus</a>
             </td>
         </tr>

@@ -6,6 +6,7 @@ $dosen = mysqli_query($koneksi, "SELECT * FROM dosen_wali ORDER BY nama ASC");
 <html>
 <head>
     <title>Tambah Data Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tambah Data Mahasiswa</h1>
